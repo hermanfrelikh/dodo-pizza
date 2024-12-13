@@ -5,7 +5,7 @@ export default function NotFound(){
     return(
         <>
         <NotFoundBlock />
-        <Link to="/">На главную</Link>
+        <Link to="/dodo-pizza">На главную</Link>
         </>
     )
 }

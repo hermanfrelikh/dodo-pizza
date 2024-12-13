@@ -18,7 +18,7 @@ function App() {
       <SearchContext.Provider value={{ searchValue, setSearchValue }}>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/dodo-pizza" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

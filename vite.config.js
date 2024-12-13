@@ -4,7 +4,7 @@ import sassDart from 'sass';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/', 
+  base: '/dodo-pizza/', 
   plugins: [react()],
   css: {
     preprocessorOptions: {

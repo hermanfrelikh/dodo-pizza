@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <header className="header">
       <div className="container">
-        <Link to="/">
+        <Link to="/dodo-pizza">
           <div className="header__logo">
             <img width="38" src="img/pizza-logo.svg" alt="Pizza logo" />
             <div>
