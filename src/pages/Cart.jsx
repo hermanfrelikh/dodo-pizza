@@ -106,7 +106,7 @@ export default function Cart() {
           </div>
           <div className="cart__bottom-buttons">
             <Link
-              to="/dodo-pizza"
+              to="/"
               className="button button--outline button-add go-back-btn"
             >
               <svg
