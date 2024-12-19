@@ -14,6 +14,8 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.3.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.2",
     "axios": "^1.7.9",
     "lodash.debounce": "^4.0.8",
     "qs": "^6.13.1",
@@ -28,8 +30,10 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
+    "@types/lodash.debounce": "^4.0.9",
+    "@types/qs": "^6.9.17",
+    "@types/react": "^18.3.16",
+    "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.3",
     "eslint": "^9.13.0",
     "eslint-plugin-react": "^7.37.2",
@@ -38,6 +42,7 @@
     "gh-pages": "^6.2.0",
     "globals": "^15.11.0",
     "sass-embedded": "^1.82.0",
+    "typescript": "^5.7.2",
     "vite": "^5.4.10"
   }
 }

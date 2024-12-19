@@ -8,11 +8,15 @@ import Cart from "./pages/Cart";
 import { Route, Routes } from "react-router-dom";
 import { createContext, useState } from "react";
 
-export const SearchContext = createContext("");
+interface SearchContextType {
+  searchValue: string;
+  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export const SearchContext = createContext<SearchContextType | undefined>(undefined);
 
 function App() {
-  const [searchValue, setSearchValue] = useState("");
-
+  const [searchValue, setSearchValue] = useState<string>("");
   return (
     <>
       <SearchContext.Provider value={{ searchValue, setSearchValue }}>

@@ -1,16 +1,36 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addItem} from "../../redux/slices/cartSlice"
+import { addItem } from "../../redux/slices/cartSlice";
 
 const itemsTypeName = ["тонкое", "традиционное"];
 
-export default function Item({id, title, price, imageUrl, sizes, types, rating}) {
-  const dispatch = useDispatch()
-  const cartItem = useSelector(state => state.cart.items.find(obj => obj.id === id))
-  const [typeIndex, setTypeIndex] = useState(0);
-  const [sizeIndex, setSizeIndex] = useState(0);
+type ItemProps = {
+  id: string;
+  title: string;
+  price: number;
+  imageUrl: string;
+  sizes: number[];
+  types: number[];
+  rating: number;
+};
 
-  const addedCount = cartItem ? cartItem.count : 0
+const Item: React.FC<ItemProps> = ({
+  id,
+  title,
+  price,
+  imageUrl,
+  sizes,
+  types,
+  rating,
+}) => {
+  const dispatch = useDispatch();
+  const cartItem = useSelector((state) =>
+    state.cart.items.find((obj) => obj.id === id)
+  );
+  const [typeIndex, setTypeIndex] = useState<number>(0);
+  const [sizeIndex, setSizeIndex] = useState<number>(0);
+
+  const addedCount = cartItem ? cartItem.count : 0;
 
   function Add() {
     const item = {
@@ -21,7 +41,7 @@ export default function Item({id, title, price, imageUrl, sizes, types, rating})
       type: itemsTypeName[typeIndex],
       size: sizes[sizeIndex],
     };
-    dispatch(addItem(item))
+    dispatch(addItem(item));
   }
   return (
     <div className="pizza-block-wrapper">
@@ -72,12 +92,11 @@ export default function Item({id, title, price, imageUrl, sizes, types, rating})
               />
             </svg>
             <span>Добавить</span>
-            {addedCount===0 ? <></> : <i>{addedCount}</i> }
-             
-            
+            {addedCount === 0 ? <></> : <i>{addedCount}</i>}
           </button>
         </div>
       </div>
     </div>
   );
-}
+};
+export default Item;

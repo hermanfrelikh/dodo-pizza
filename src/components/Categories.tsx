@@ -1,13 +1,22 @@
-export default function Categories({categoryId, onChangeCategoryId}) {
+type CategoriesProps = {
+  categoryId: number;
+  onChangeCategoryId: (i: number) => void;
+};
 
-  const categories = [
-    "Все",
-    "Мясные",
-    "Вегетарианская",
-    "Гриль",
-    "Острые",
-    "Закрытые",
-  ];
+const categories = [
+  "Все",
+  "Мясные",
+  "Вегетарианская",
+  "Гриль",
+  "Острые",
+  "Закрытые",
+];
+
+const Categories: React.FC<CategoriesProps> = ({
+  categoryId,
+  onChangeCategoryId,
+}) => {
+  
 
   return (
     <div className="categories">
@@ -26,4 +35,5 @@ export default function Categories({categoryId, onChangeCategoryId}) {
       </ul>
     </div>
   );
-}
+};
+export default Categories;

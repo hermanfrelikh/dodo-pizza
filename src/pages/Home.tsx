@@ -11,7 +11,7 @@ import axios from "axios";
 import qs from "qs";
 import { useNavigate } from "react-router-dom";
 
-export default function Home() {
+export default function Home () {
   const navigation = useNavigate();
   const dispatch = useDispatch();
   const isSearch = useRef(false);
@@ -20,9 +20,9 @@ export default function Home() {
   const sortType = useSelector((state) => state.filter.sort.sortProperty);
   const { searchValue } = useContext(SearchContext);
   const [items, setItems] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [currentPage, setCurrentPage] = useState(1);
-  const onChangeCategoryId = (id) => {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const onChangeCategoryId = (id: number) => {
     dispatch(setCategoryId(id));
   };
 

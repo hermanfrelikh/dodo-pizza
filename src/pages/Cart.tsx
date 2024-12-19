@@ -6,7 +6,7 @@ import CartItem from "../components/CartItem";
 export default function Cart() {
   const dispatch = useDispatch();
   const { items, totalPrice } = useSelector((state) => state.cart);
-  const totalCount = items.reduce((sum, item)=> sum + item.count, 0)
+  const totalCount = items.reduce((sum: number, item)=> sum + item.count, 0)
   const clickClearCart = () => {
     dispatch(clearItems());
   };

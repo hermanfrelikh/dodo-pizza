@@ -7,9 +7,9 @@ import { useSelector, useDispatch } from "react-redux";
 
 export default function Search() {
   const dispatch = useDispatch();
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState<string>("");
   const { searchValue, setSearchValue } = useContext(SearchContext);
-  const inputRef = useRef();
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (searchValue !== "") {
@@ -24,7 +24,7 @@ export default function Search() {
     []
   );
 
-  const onChangeInput = (e) => {
+  const onChangeInput = (e: React.ChangeEvent<HTMLInputElement> ) => {
     setValue(e.target.value);
     updateSearchValue(e.target.value);
   };
@@ -32,7 +32,7 @@ export default function Search() {
   const onClickClear = () => {
     setValue("");
     setSearchValue("");
-    inputRef.current.focus();
+    inputRef.current?.focus();
   };
 
   return (

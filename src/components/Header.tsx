@@ -2,9 +2,10 @@ import { Link } from "react-router-dom";
 import Search from "./Search/Search";
 import { useSelector } from "react-redux";
 
+
 export default function Header() {
   const {items, totalPrice} = useSelector(state => state.cart)
-  const totalCount = items.reduce((sum, item)=> sum + item.count, 0)
+  const totalCount = items.reduce((sum:number, item:number)=> sum + item.count, 0)
   return (
     <header className="header">
       <div className="container">
